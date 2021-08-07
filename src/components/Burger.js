@@ -18,7 +18,7 @@ const BurgerContainer = styled.div`
   width: 40px;
   height: 25px;
   position: absolute;
-  top: 10%;
+  top: 5%;
   right: 10%;
   pointer: cursor;
 `;

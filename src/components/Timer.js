@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Burger from "./Burger.js";
+
 const Timer = () => {
+  const [minute, setMinute] = useState("12");
+  const [second, setSecond] = useState("30");
+
   return (
     <>
       <Burger />
       <ClockContainer>
         <Clock>
           <h1>Developer</h1>
-          <h2>12:15</h2>
+          <h2>
+            {minute}:{second}
+          </h2>
           <PauseButton>Pause</PauseButton>
         </Clock>
       </ClockContainer>
@@ -43,6 +49,7 @@ const PauseButton = styled.button`
   border-radius: 50%;
   background: #cfbba3;
   cursor: pointer;
+  color: #3f444a;
 `;
 
 export default Timer;
