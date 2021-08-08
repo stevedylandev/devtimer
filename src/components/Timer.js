@@ -1,10 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import Burger from "./Burger.js";
 
 const Timer = () => {
-  const [minute, setMinute] = useState("12");
-  const [second, setSecond] = useState("30");
+  const [seconds, setSeconds] = useState(120);
+  const [pause, setPause] = useState(false);
+  let intervalRef = useRef();
+
+  const tick = () => setSeconds((prev) => prev - 1);
+
+  useEffect(() => {
+    setPause(false);
+    intervalRef.current = setInterval(tick, 1000);
+    return () => clearInterval(intervalRef.current);
+  }, []);
+
+  const pauseButtonHandle = () => {
+    if (!pause) {
+      clearInterval(intervalRef.current);
+    } else {
+      intervalRef.current = setInterval(tick, 1000);
+    }
+    setPause((prev) => !pause);
+  };
 
   return (
     <>
@@ -12,10 +30,10 @@ const Timer = () => {
       <ClockContainer>
         <Clock>
           <h1>Developer</h1>
-          <h2>
-            {minute}:{second}
-          </h2>
-          <PauseButton>Pause</PauseButton>
+          <h2>{seconds}</h2>
+          <PauseButton onClick={pauseButtonHandle}>
+            {pause ? "Start" : "Pause"}
+          </PauseButton>
         </Clock>
       </ClockContainer>
     </>
