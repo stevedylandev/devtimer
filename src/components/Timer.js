@@ -3,11 +3,13 @@ import styled from "styled-components";
 import Burger from "./Burger.js";
 
 const Timer = () => {
-  const [seconds, setSeconds] = useState(120);
+  const [secondsLeft, setSecondsLeft] = useState(5);
   const [pause, setPause] = useState(false);
   let intervalRef = useRef();
 
-  const tick = () => setSeconds((prev) => prev - 1);
+  const tick = () => {
+    setSecondsLeft((prev) => prev - 1);
+  };
 
   useEffect(() => {
     setPause(false);
@@ -24,13 +26,28 @@ const Timer = () => {
     setPause((prev) => !pause);
   };
 
+  const clockify = () => {
+    let mins = Math.floor((secondsLeft / 60) % 60);
+    let seconds = Math.floor(secondsLeft % 60);
+
+    let displayMins = mins < 10 ? `0${mins}` : mins;
+    let displaySeconds = seconds < 10 ? `0${seconds}` : seconds;
+
+    return {
+      displayMins,
+      displaySeconds,
+    };
+  };
+
   return (
     <>
       <Burger />
       <ClockContainer>
         <Clock>
           <h1>Developer</h1>
-          <h2>{seconds}</h2>
+          <h2>
+            {clockify().displayMins}:{clockify().displaySeconds}
+          </h2>
           <PauseButton onClick={pauseButtonHandle}>
             {pause ? "Start" : "Pause"}
           </PauseButton>
