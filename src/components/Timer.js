@@ -3,19 +3,24 @@ import styled from "styled-components";
 import Burger from "./Burger.js";
 
 const Timer = () => {
-  const [secondsLeft, setSecondsLeft] = useState(5);
-  const [pause, setPause] = useState(false);
+  const [secondsLeft, setSecondsLeft] = useState(120);
+  const [pause, setPause] = useState(true);
   let intervalRef = useRef();
 
   const tick = () => {
-    setSecondsLeft((prev) => prev - 1);
+    if (secondsLeft > 0) {
+      setSecondsLeft((prev) => prev - 1);
+    } else {
+      setSecondsLeft(0);
+    }
   };
 
   useEffect(() => {
-    setPause(false);
-    intervalRef.current = setInterval(tick, 1000);
-    return () => clearInterval(intervalRef.current);
-  }, []);
+    if (secondsLeft === 0) {
+      clearInterval(intervalRef.current);
+      setPause(true);
+    }
+  }, [secondsLeft]);
 
   const pauseButtonHandle = () => {
     if (!pause) {
