@@ -3,24 +3,24 @@ import styled from "styled-components";
 import Burger from "./Burger.js";
 
 const Timer = () => {
-  const [secondsLeft, setSecondsLeft] = useState(120);
+  const [inputSeconds, setInputSeconds] = useState(120);
   const [pause, setPause] = useState(true);
   let intervalRef = useRef();
 
   const tick = () => {
-    if (secondsLeft > 0) {
-      setSecondsLeft((prev) => prev - 1);
+    if (inputSeconds > 0) {
+      setInputSeconds((prev) => prev - 1);
     } else {
-      setSecondsLeft(0);
+      setInputSeconds(0);
     }
   };
 
   useEffect(() => {
-    if (secondsLeft === 0) {
+    if (inputSeconds === 0) {
       clearInterval(intervalRef.current);
       setPause(true);
     }
-  }, [secondsLeft]);
+  }, [inputSeconds]);
 
   const pauseButtonHandle = () => {
     if (!pause) {
@@ -32,8 +32,8 @@ const Timer = () => {
   };
 
   const clockify = () => {
-    let mins = Math.floor((secondsLeft / 60) % 60);
-    let seconds = Math.floor(secondsLeft % 60);
+    let mins = Math.floor((inputSeconds / 60) % 60);
+    let seconds = Math.floor(inputSeconds % 60);
 
     let displayMins = mins < 10 ? `0${mins}` : mins;
     let displaySeconds = seconds < 10 ? `0${seconds}` : seconds;
