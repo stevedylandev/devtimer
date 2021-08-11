@@ -7,13 +7,7 @@ const Timer = () => {
   const [pause, setPause] = useState(true);
   let intervalRef = useRef();
 
-  const tick = () => {
-    if (inputSeconds > 0) {
-      setInputSeconds((prev) => prev - 1);
-    } else {
-      setInputSeconds(0);
-    }
-  };
+  const tick = () => {setInputSeconds((prev) => prev - 1)};
 
   useEffect(() => {
     if (inputSeconds === 0) {
