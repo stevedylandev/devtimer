@@ -1,3 +1,18 @@
+# DevTimer
+
+A webapp made for film photographers to help with developing times and recipes for both color and b&w films! 
+
+This project is in it's early stages and is currently under development. The main branch will include working and completed code, while other branches will be new features or bug fixes. It is being built with React, Redux, and styled components. Feel free to follow along in the process of creating this app on my blog [here!](https://stevedsimkins.blog)
+
+Thanks for stopping by! 
+
+
+
+
+(below is the template README for create-react-app)
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
