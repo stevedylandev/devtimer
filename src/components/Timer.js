@@ -1,19 +1,25 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { start, tick } from "../actions";
 import styled from "styled-components";
 import Burger from "./Burger.js";
 
 const Timer = () => {
-  const [inputSeconds, setInputSeconds] = useState(120);
-  const [pause, setPause] = useState(true);
+
+  const inputSeconds = useSelector(state => state.inputSeconds);
+  const pause = useSelector(state => state.pause);
+  const dispatch = useDispatch();
+  // const [inputSeconds, setInputSeconds] = useState(120);
+  // const [pause, setPause] = useState(true);
   let intervalRef = useRef();
 
-  const tick = () => {setInputSeconds((prev) => prev - 1)};
+  //const tick = () => {setInputSeconds((prev) => prev - 1)};
 
   useEffect(() => {
     if (inputSeconds === 0) {
       clearInterval(intervalRef.current);
-      setPause(true);
+      //setPause(true);
+      dispatch(start);
     }
   }, [inputSeconds]);
 
@@ -21,9 +27,11 @@ const Timer = () => {
     if (!pause) {
       clearInterval(intervalRef.current);
     } else {
-      intervalRef.current = setInterval(tick, 1000);
+      //intervalRef.current = setInterval(tick, 1000);
+      intervalRef.current = setInterval(dispatch(tick), 1000);
     }
-    setPause((prev) => !pause);
+    // setPause((prev) => !pause);
+    dispatch(!start);
   };
 
   const clockify = () => {

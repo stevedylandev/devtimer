@@ -1,4 +1,4 @@
-const pauseReducer = (state=false, action) => {
+const pauseReducer = (state=true, action) => {
     switch(action.type){
         case 'START':
             return !state;
