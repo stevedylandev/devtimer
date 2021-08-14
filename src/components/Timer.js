@@ -18,8 +18,8 @@ const Timer = () => {
   useEffect(() => {
     if (inputSeconds === 0) {
       clearInterval(intervalRef.current);
-      //setPause(true);
-      dispatch(start);
+      // setPause(true);
+      dispatch(start());
     }
   }, [inputSeconds]);
 
@@ -28,10 +28,10 @@ const Timer = () => {
       clearInterval(intervalRef.current);
     } else {
       //intervalRef.current = setInterval(tick, 1000);
-      intervalRef.current = setInterval(dispatch(tick), 1000);
+      intervalRef.current = setInterval(dispatch(tick()), 1000);
     }
     // setPause((prev) => !pause);
-    dispatch(!start);
+    dispatch(start());
   };
 
   const clockify = () => {
