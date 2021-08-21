@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
-import Burger from "./Burger.js";
 
 const Timer = ({ inputSeconds, setInputSeconds, pause, setPause }) => {
   let intervalRef = useRef();
@@ -38,7 +37,6 @@ const Timer = ({ inputSeconds, setInputSeconds, pause, setPause }) => {
 
   return (
     <>
-      <Burger />
       <ClockContainer>
         <Clock>
           <h1>Developer</h1>
