@@ -1,10 +1,10 @@
 import React from "react";
+// Components
+import Recipe from "../components/Recipe.js";
 
 const RecipePage = () => {
   return (
-    <div>
-      <h1>Recipe</h1>
-    </div>
+    <Recipe />
   )
 }
 
