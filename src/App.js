@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Timer from "./components/Timer.js";
 import GlobalStyles from "./components/GlobalStyles.js";
+import TimerPage from "./pages/TimerPage.js";
 
 function App() {
 
@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <GlobalStyles />
-      <Timer inputSeconds={inputSeconds} setInputSeconds={setInputSeconds} pause={pause} setPause={setPause} />
+      <TimerPage inputSeconds={inputSeconds} setInputSeconds={setInputSeconds} pause={pause} setPause={setPause} />
     </div>
   );
 }
