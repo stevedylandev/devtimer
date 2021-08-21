@@ -2,12 +2,10 @@ import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import Burger from "./Burger.js";
 
-const Timer = () => {
-  const [inputSeconds, setInputSeconds] = useState(120);
-  const [pause, setPause] = useState(true);
+const Timer = ({ inputSeconds, setInputSeconds, pause, setPause }) => {
   let intervalRef = useRef();
 
-  const tick = () => {setInputSeconds((prev) => prev - 1)};
+  const tick = () => { setInputSeconds((prev) => prev - 1) };
 
   useEffect(() => {
     if (inputSeconds === 0) {
