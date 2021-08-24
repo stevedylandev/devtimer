@@ -7,11 +7,6 @@ const Recipe = () => {
       <RecipeForm>
         <h1>Recipe</h1>
         <RecipeInput />
-        <RecipeInput />
-        <RecipeInput />
-        <RecipeInput />
-        <RecipeInput />
-        <RecipeInput />
         <StartButton>Start</StartButton>
       </RecipeForm>
     </RecipeContainer>
@@ -41,6 +36,14 @@ const RecipeForm = styled.div`
 const RecipeInput = styled.input`
   border: none;
   padding: 1rem 2rem;
+  border-radius: 30px;
+  background: #AFBFC6;
+  color: #3f444a;
+  font-size: 16px;
+  text-align: center;
+  :focus {
+    outline: none;
+  }
 `;
 
 const StartButton = styled.button`
