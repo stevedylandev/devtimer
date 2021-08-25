@@ -1,13 +1,23 @@
 import React from "react";
 import styled from "styled-components";
+import {useHistory} from "react-router-dom";
 
 const Recipe = () => {
+  
+  const history = useHistory();
+  const routeChange = () =>{ 
+    let path = `/timer`; 
+    history.push(path);
+  }
+  
   return (
     <RecipeContainer>
       <RecipeForm>
         <h1>Recipe</h1>
-        <RecipeInput />
-        <StartButton>Start</StartButton>
+        <RecipeInput type="text" />
+          <StartButton type="submit" onClick={routeChange}>
+            Start
+          </StartButton>
       </RecipeForm>
     </RecipeContainer>
   )

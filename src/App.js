@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {Switch, Route} from "react-router-dom";
 // styles
 import GlobalStyles from "./components/GlobalStyles.js";
 // Pages
@@ -16,8 +17,15 @@ function App() {
     <div className="App">
       <GlobalStyles />
       <Burger />
-      <RecipePage />
-      <TimerPage inputSeconds={inputSeconds} setInputSeconds={setInputSeconds} pause={pause} setPause={setPause} />
+      <Switch>
+        <Route path="/" exact>
+          <RecipePage />
+        </Route>
+        
+        <Route path="/timer">
+          <TimerPage inputSeconds={inputSeconds} setInputSeconds={setInputSeconds} pause={pause} setPause={setPause} />
+        </Route> 
+      </Switch>
     </div>
   );
 }
