@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 
 const Timer = ({ inputSeconds, setInputSeconds, pause, setPause }) => {
@@ -6,7 +6,7 @@ const Timer = ({ inputSeconds, setInputSeconds, pause, setPause }) => {
 
   const tick = () => { setInputSeconds((prev) => prev - 1) };
 
-  useEffect(() => {
+  useEffect((setPause) => {
     if (inputSeconds === 0) {
       clearInterval(intervalRef.current);
       setPause(true);

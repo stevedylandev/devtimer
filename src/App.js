@@ -10,7 +10,7 @@ import Burger from "./components/Burger.js";
 
 function App() {
 
-  const [inputSeconds, setInputSeconds] = useState(120);
+  const [inputSeconds, setInputSeconds] = useState(0);
   const [pause, setPause] = useState(true);
 
   return (
@@ -19,7 +19,7 @@ function App() {
       <Burger />
       <Switch>
         <Route path="/" exact>
-          <RecipePage />
+          <RecipePage inputSeconds={inputSeconds} setInputSeconds={setInputSeconds} />
         </Route>
         
         <Route path="/timer">

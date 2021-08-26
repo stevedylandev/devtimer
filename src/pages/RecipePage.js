@@ -2,9 +2,9 @@ import React from "react";
 // Components
 import Recipe from "../components/Recipe.js";
 
-const RecipePage = () => {
+const RecipePage = ({inputSeconds, setInputSeconds}) => {
   return (
-    <Recipe />
+    <Recipe inputSeconds={inputSeconds} setInputSeconds={setInputSeconds} />
   )
 }
 
