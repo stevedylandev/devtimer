@@ -5,15 +5,17 @@ import {useHistory} from "react-router-dom";
 const Recipe = ({inputSeconds, setInputSeconds}) => {
   
   const history = useHistory();
-  const [minValue, setMinValue] = useState(0); 
-  const [secsValue, setSecsValue] = useState(0); 
+  const [minValue, setMinValue] = useState('00'); 
+  const [secsValue, setSecsValue] = useState('00'); 
 
   const updateTimerValue = () => {
     const totalMins = minValue * 60;
-    const totalSecs = totalMins + secsValue;
+    const totalSecs = Number(totalMins) + Number(secsValue);
     setInputSeconds(totalSecs);
-    console.log(inputSeconds)
     routeChange();
+    console.log(totalMins);
+    console.log(inputSeconds);
+    
   }
  
   const minInputHandler = (e) => {

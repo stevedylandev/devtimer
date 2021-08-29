@@ -6,7 +6,7 @@ const Timer = ({ inputSeconds, setInputSeconds, pause, setPause }) => {
 
   const tick = () => { setInputSeconds((prev) => prev - 1) };
 
-  useEffect((setPause) => {
+  useEffect(() => {
     if (inputSeconds === 0) {
       clearInterval(intervalRef.current);
       setPause(true);
