@@ -5,8 +5,8 @@ import {useHistory} from "react-router-dom";
 const Recipe = ({inputSeconds, setInputSeconds}) => {
   
   const history = useHistory();
-  const [minValue, setMinValue] = useState('00'); 
-  const [secsValue, setSecsValue] = useState('00'); 
+  const [minValue, setMinValue] = useState(""); 
+  const [secsValue, setSecsValue] = useState(""); 
 
   const updateTimerValue = () => {
     const totalMins = minValue * 60;
@@ -36,9 +36,9 @@ const Recipe = ({inputSeconds, setInputSeconds}) => {
       <RecipeForm>
         <h1>Recipe</h1>
         <RecipeInput>
-          <input id="mins" type="number" value={minValue} onChange={minInputHandler} min="0" max="59" />
+          <input id="mins" type="number" value={minValue} onChange={minInputHandler} min="0" max="59" placeholder="0" />
           <p>:</p>
-          <input id="secs" type="number" value={secsValue} onChange={secsInputHandler} min="0" max="59" />
+          <input id="secs" type="number" value={secsValue} onChange={secsInputHandler} min="0" max="59" placeholder="00" />
         </RecipeInput>
           <StartButton type="submit" onClick={updateTimerValue}>
             Start
