@@ -11,7 +11,7 @@ const Timer = ({ inputSeconds, setInputSeconds, pause, setPause }) => {
       clearInterval(intervalRef.current);
       setPause(true);
     }
-  }, [inputSeconds]);
+  }, [inputSeconds, setPause]);
 
   const pauseButtonHandle = () => {
     if (!pause) {
