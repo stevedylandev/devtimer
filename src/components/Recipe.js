@@ -13,9 +13,6 @@ const Recipe = ({inputSeconds, setInputSeconds}) => {
     const totalSecs = Number(totalMins) + Number(secsValue);
     setInputSeconds(totalSecs);
     routeChange();
-    console.log(totalMins);
-    console.log(inputSeconds);
-    
   }
  
   const minInputHandler = (e) => {
@@ -33,14 +30,14 @@ const Recipe = ({inputSeconds, setInputSeconds}) => {
   
   return (
     <RecipeContainer>
-      <RecipeForm>
+      <RecipeForm onSubmit={updateTimerValue}>
         <h1>Recipe</h1>
         <RecipeInput>
-          <input id="mins" type="number" value={minValue} onChange={minInputHandler} min="0" max="59" placeholder="0" />
+          <input id="mins" type="number" value={minValue} onChange={minInputHandler} min="0" max="59" placeholder="0" required />
           <p>:</p>
-          <input id="secs" type="number" value={secsValue} onChange={secsInputHandler} min="0" max="59" placeholder="00" />
+          <input id="secs" type="number" value={secsValue} onChange={secsInputHandler} min="0" max="59" placeholder="00" required />
         </RecipeInput>
-          <StartButton type="submit" onClick={updateTimerValue}>
+          <StartButton type="submit" >
             Start
           </StartButton>
       </RecipeForm>
@@ -57,7 +54,7 @@ const RecipeContainer = styled.div`
   align-items: center;
 `;
 
-const RecipeForm = styled.div`
+const RecipeForm = styled.form`
   height: 80vh;
   width: 20rem;
   display: flex;
