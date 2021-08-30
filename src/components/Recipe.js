@@ -72,11 +72,11 @@ const RecipeInput = styled.div`
   padding: 1rem 1rem;
   height: 5rem;
   border-radius: 30px;
-  background: #AFBFC6;
-  color: #3f444a;
+  background: #ECEFF4;
+  color: #2E3440;
   input {
-    background: #AFBFC6;
-    color: #3f444a;
+    background: #ECEFF4;
+    color: #2E3440;
     border: none;
     font-size: 38px;
     text-align: center;
@@ -103,9 +103,9 @@ const StartButton = styled.button`
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: #cfbba3;
+  background: #ECEFF4;
   cursor: pointer;
-  color: #3f444a;
+  color: #2E3440;
   align-self: center;
 `;
 

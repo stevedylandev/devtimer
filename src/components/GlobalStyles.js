@@ -11,8 +11,8 @@ const GlobalStyles = createGlobalStyle`
   body {
     width: 100%;
     font-family: 'Source Sans Pro', sans-serif;
-    background: #3f444a;
-    color: #f1ebdc;
+    background: #2E3440;
+    color: #ECEFF4;
   }
   
   h1 {

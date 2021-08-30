@@ -26,19 +26,19 @@ const BurgerContainer = styled.div`
 const Line1 = styled.div`
   width: 40px;
   height: 2px;
-  background: #cfbba3;
+  background: #ECEFF4;
 `;
 
 const Line2 = styled.div`
   width: 40px;
   height: 2px;
-  background: #cfbba3;
+  background: #ECEFF4;
 `;
 
 const Line3 = styled.div`
   width: 40px;
   height: 2px;
-  background: #cfbba3;
+  background: #ECEFF4;
 `;
 
 export default Burger;

@@ -77,9 +77,9 @@ const PauseButton = styled.button`
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: #cfbba3;
+  background: #E5E9F0;
   cursor: pointer;
-  color: #3f444a;
+  color: #2E3440;
 `;
 
 export default Timer;
