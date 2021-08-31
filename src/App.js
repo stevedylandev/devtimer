@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import {Switch, Route} from "react-router-dom";
 // styles
-import GlobalStyles from "./components/GlobalStyles.js";
+import GlobalStyles from "./components/GlobalStyles";
 // Pages
-import TimerPage from "./pages/TimerPage.js";
-import RecipePage from "./pages/RecipePage.js";
+import TimerPage from "./pages/TimerPage";
+import RecipePage from "./pages/RecipePage";
+import HomePage from "./pages/WelcomePage";
 // components
 import Burger from "./components/Burger.js";
 
@@ -19,6 +20,10 @@ function App() {
       <Burger />
       <Switch>
         <Route path="/" exact>
+          <HomePage />
+        </Route>
+    
+        <Route path="/recipe" exact>
           <RecipePage inputSeconds={inputSeconds} setInputSeconds={setInputSeconds} />
         </Route>
         
