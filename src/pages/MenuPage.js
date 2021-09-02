@@ -1,8 +1,9 @@
 import React from "react"; 
+import Menu from "../components/Menu";
 
 const MenuPage = () => {
   return (
-    <h1>Menu</h1>
+    <Menu />
   )
 };
 

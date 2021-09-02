@@ -6,6 +6,7 @@ import GlobalStyles from "./components/GlobalStyles";
 import TimerPage from "./pages/TimerPage";
 import RecipePage from "./pages/RecipePage";
 import HomePage from "./pages/WelcomePage";
+import MenuPage from "./pages/MenuPage";
 // components
 import Burger from "./components/Burger.js";
 
@@ -18,6 +19,7 @@ function App() {
     <div className="App">
       <GlobalStyles />
       <Burger />
+      <MenuPage />
       <Switch>
         <Route path="/" exact>
           <HomePage />
