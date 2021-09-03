@@ -6,20 +6,24 @@ import GlobalStyles from "./components/GlobalStyles";
 import TimerPage from "./pages/TimerPage";
 import RecipePage from "./pages/RecipePage";
 import HomePage from "./pages/WelcomePage";
-import MenuPage from "./pages/MenuPage";
 // components
-import Burger from "./components/Burger.js";
+import Menu from "./components/Menu";
 
 function App() {
 
   const [inputSeconds, setInputSeconds] = useState(0);
   const [pause, setPause] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
+  
+  const menuHandler = () => {
+    setMenuOpen(!menuOpen);
+  }
 
   return (
     <div className="App">
       <GlobalStyles />
-      <Burger />
-      <MenuPage />
+      <button onClick={menuHandler}> menu </button>
+      {menuOpen && <Menu /> }
       <Switch>
         <Route path="/" exact>
           <HomePage />
