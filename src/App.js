@@ -8,6 +8,7 @@ import RecipePage from "./pages/RecipePage";
 import HomePage from "./pages/WelcomePage";
 // components
 import Menu from "./components/Menu";
+import Burger from "./components/Burger";
 
 function App() {
 
@@ -15,14 +16,11 @@ function App() {
   const [pause, setPause] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
   
-  const menuHandler = () => {
-    setMenuOpen(!menuOpen);
-  }
 
   return (
     <div className="App">
       <GlobalStyles />
-      <button onClick={menuHandler}> menu </button>
+      <Burger menuOpen={menuOpen} setMenuOpen={setMenuOpen} /> 
       {menuOpen && <Menu /> }
       <Switch>
         <Route path="/" exact>

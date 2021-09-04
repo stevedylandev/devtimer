@@ -23,7 +23,8 @@ const MenuContainer = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  z-index: -1;
+  z-index: 10;
+  background: #2E3440;
 `;
 
 const MenuList = styled.ul`
