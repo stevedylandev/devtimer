@@ -1,9 +1,11 @@
 import React from "react"; 
 import styled from "styled-components";
+import {motion} from "framer-motion";
+import {dropDown} from "../animations";
 
-const Menu = () => {
+const Menu = ({menuOpen}) => {
   return (
-    <MenuContainer>
+    <MenuContainer variants={dropDown} animate={menuOpen ? "active" : "inactive"}>
       <MenuList>
         <li><h1>Home</h1></li>
         <li><h1>Recipe</h1></li>
@@ -13,7 +15,7 @@ const Menu = () => {
 };
 
 
-const MenuContainer = styled.div`
+const MenuContainer = styled(motion.div)`
   height: 100vh;
   width: 100vw;
   position: absolute;

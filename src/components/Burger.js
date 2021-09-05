@@ -1,38 +1,36 @@
-import React, {useState} from "react";
+import React from "react";
 import styled from "styled-components";
-import Lottie from "react-lottie";
+import {motion} from "framer-motion";
+import {line1Animation, line2Animation, line3Animation} from "../animations";
 
-import animationData from "../animations/menuBurger.json";
 
 const Burger = ({menuOpen, setMenuOpen}) => {
 
-  const [isPaused, setIsPaused] = useState(false)
-  
   const menuHandler = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const animationOptions = {
-    loop: false, 
-    autoplay: false,
-    animationData: animationData,
-    rendererSettings: {
-        preserveAspectRatio: 'xMidYMid slice'
-    }
-  }
-
   return (
     <BurgerContainer onClick={menuHandler}>
-      <Lottie options={animationOptions} height={70} width={70} isPaused={isPaused}  />
+      <Line variants={line1Animation} animate={menuOpen ? "active" : "inactive"} />
+      <Line variants={line2Animation} animate={menuOpen ? "active" : "inactive"} />
+      <Line variants={line3Animation} animate={menuOpen ? "active" : "inactive"} />
     </BurgerContainer>
   );
 };
 
-const BurgerContainer = styled.div`
+const BurgerContainer = styled(motion.div)`
   position: absolute;
   top: 5%;
   right: 5%;
   z-index: 20;
+`;
+
+const Line = styled(motion.div)`
+  width: 50px;
+  height: 3px;
+  background: #ECEFF4;
+  margin: 0.75rem 0rem;
 `;
 
 

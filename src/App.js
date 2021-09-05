@@ -21,7 +21,7 @@ function App() {
     <div className="App">
       <GlobalStyles />
       <Burger menuOpen={menuOpen} setMenuOpen={setMenuOpen} /> 
-      {menuOpen && <Menu /> }
+      {menuOpen && <Menu menuOpen={menuOpen} /> }
       <Switch>
         <Route path="/" exact>
           <HomePage />
