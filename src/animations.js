@@ -57,14 +57,14 @@ export const line3Animation = {
 
 export const dropDown = {
   inactive: {
-    x: 2500,
+    opacity: 0,
     transition: {
       duration: 0.75,
       ease: "easeOut",
     },
   },
   active: {
-    x: 0, 
+    opacity: 1, 
     transition: {
     duration: 0.75,
     ease: "easeOut",
