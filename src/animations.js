@@ -57,16 +57,16 @@ export const line3Animation = {
 
 export const dropDown = {
   inactive: {
-    y: 1000,
+    x: 2500,
     transition: {
-      duration: 1,
+      duration: 0.75,
       ease: "easeOut",
     },
   },
   active: {
-    y: 0, 
+    x: 0, 
     transition: {
-    duration: 1,
+    duration: 0.75,
     ease: "easeOut",
     },
   }

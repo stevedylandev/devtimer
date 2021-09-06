@@ -2,13 +2,29 @@ import React from "react";
 import styled from "styled-components";
 import {motion} from "framer-motion";
 import {dropDown} from "../animations";
+import {useHistory} from "react-router-dom";
 
-const Menu = ({menuOpen}) => {
+const Menu = ({menuOpen, setMenuOpen}) => {
+  
+  const history = useHistory();
+  
+  const routeChangeHome = () =>{ 
+    let path = `/`; 
+    history.push(path);
+    setMenuOpen(false);
+  }
+  
+  const routeChangeRecipe = () =>{ 
+    let path = `/recipe`; 
+    history.push(path);
+    setMenuOpen(false);
+  }
+
   return (
-    <MenuContainer variants={dropDown} animate={menuOpen ? "active" : "inactive"}>
+    <MenuContainer initial="inactive" variants={dropDown} animate={menuOpen ? "active" : "inactive"}>
       <MenuList>
-        <li><h1>Home</h1></li>
-        <li><h1>Recipe</h1></li>
+        <li onClick={routeChangeHome}>Home</li>
+        <li onClick={routeChangeRecipe}>Recipe</li>
       </MenuList>
     </MenuContainer>
   )
@@ -31,6 +47,13 @@ const MenuContainer = styled(motion.div)`
 
 const MenuList = styled.ul`
   list-style: none;
+  li {
+    text-align: center;
+    font-size: 64px;
+    font-weight: 600;
+    margin: 4rem 0rem;
+    cursor: pointer;
+  }
 `
 
 export default Menu;
