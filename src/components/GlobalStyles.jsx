@@ -5,6 +5,11 @@ const GlobalStyles = createGlobalStyle`
   html{
     overflow-x: hidden;
   }
+
+  .App {
+    overflow-x: hidden;
+    position: relative;
+  }
   
   *{
     margin: 0;
