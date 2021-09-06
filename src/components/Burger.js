@@ -1,44 +1,37 @@
 import React from "react";
 import styled from "styled-components";
+import {motion} from "framer-motion";
+import {line1Animation, line2Animation, line3Animation} from "../animations";
 
-const Burger = () => {
+
+const Burger = ({menuOpen, setMenuOpen}) => {
+
+  const menuHandler = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
-    <BurgerContainer>
-      <Line1 />
-      <Line2 />
-      <Line3 />
+    <BurgerContainer onClick={menuHandler}>
+      <Line variants={line1Animation} animate={menuOpen ? "active" : "inactive"} />
+      <Line variants={line2Animation} animate={menuOpen ? "active" : "inactive"} />
+      <Line variants={line3Animation} animate={menuOpen ? "active" : "inactive"} />
     </BurgerContainer>
   );
 };
 
-const BurgerContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 40px;
-  height: 25px;
+const BurgerContainer = styled(motion.div)`
   position: absolute;
   top: 5%;
-  right: 10%;
-  pointer: cursor;
+  right: 5%;
+  z-index: 20;
 `;
 
-const Line1 = styled.div`
-  width: 40px;
-  height: 2px;
+const Line = styled(motion.div)`
+  width: 50px;
+  height: 3px;
   background: #ECEFF4;
+  margin: 0.75rem 0rem;
 `;
 
-const Line2 = styled.div`
-  width: 40px;
-  height: 2px;
-  background: #ECEFF4;
-`;
-
-const Line3 = styled.div`
-  width: 40px;
-  height: 2px;
-  background: #ECEFF4;
-`;
 
 export default Burger;

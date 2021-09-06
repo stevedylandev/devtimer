@@ -7,17 +7,21 @@ import TimerPage from "./pages/TimerPage";
 import RecipePage from "./pages/RecipePage";
 import HomePage from "./pages/WelcomePage";
 // components
-import Burger from "./components/Burger.js";
+import Menu from "./components/Menu";
+import Burger from "./components/Burger";
 
 function App() {
 
   const [inputSeconds, setInputSeconds] = useState(0);
   const [pause, setPause] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
+  
 
   return (
     <div className="App">
       <GlobalStyles />
-      <Burger />
+      <Burger menuOpen={menuOpen} setMenuOpen={setMenuOpen} /> 
+      <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} /> 
       <Switch>
         <Route path="/" exact>
           <HomePage />
