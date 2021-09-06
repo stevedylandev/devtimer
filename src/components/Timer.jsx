@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
 
 const Timer = ({ inputSeconds, setInputSeconds, pause, setPause }) => {
   let intervalRef = useRef();
@@ -44,7 +46,7 @@ const Timer = ({ inputSeconds, setInputSeconds, pause, setPause }) => {
             {clockify().displayMins}:{clockify().displaySeconds}
           </h2>
           <PauseButton onClick={pauseButtonHandle}>
-            {pause ? "Start" : "Pause"}
+            {pause ? <FontAwesomeIcon icon={faPlay} size="2x" /> : <FontAwesomeIcon icon={faPause} size="2x" />}
           </PauseButton>
         </Clock>
       </ClockContainer>

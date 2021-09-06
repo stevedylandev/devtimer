@@ -1,5 +1,5 @@
 import React from "react";
-import Timer from "../components/Timer.js";
+import Timer from "../components/Timer";
 
 
 const TimerPage = ({ inputSeconds, setInputSeconds, pause, setPause }) => {
