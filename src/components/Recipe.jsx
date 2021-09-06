@@ -1,12 +1,13 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import {useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import { motion } from "framer-motion";
 
-const Recipe = ({inputSeconds, setInputSeconds}) => {
-  
+const Recipe = ({ inputSeconds, setInputSeconds }) => {
+
   const history = useHistory();
-  const [minValue, setMinValue] = useState(""); 
-  const [secsValue, setSecsValue] = useState(""); 
+  const [minValue, setMinValue] = useState("");
+  const [secsValue, setSecsValue] = useState("");
 
   const updateTimerValue = () => {
     const totalMins = minValue * 60;
@@ -14,7 +15,7 @@ const Recipe = ({inputSeconds, setInputSeconds}) => {
     setInputSeconds(totalSecs);
     routeChange();
   }
- 
+
   const minInputHandler = (e) => {
     setMinValue(e.target.value);
   }
@@ -23,11 +24,11 @@ const Recipe = ({inputSeconds, setInputSeconds}) => {
     setSecsValue(e.target.value);
   }
 
-  const routeChange = () =>{ 
-    let path = `/timer`; 
+  const routeChange = () => {
+    let path = `/timer`;
     history.push(path);
   }
-  
+
   return (
     <RecipeContainer>
       <RecipeForm onSubmit={updateTimerValue}>
@@ -37,16 +38,16 @@ const Recipe = ({inputSeconds, setInputSeconds}) => {
           <p>:</p>
           <input id="secs" type="number" value={secsValue} onChange={secsInputHandler} min="0" max="59" placeholder="00" required />
         </RecipeInput>
-          <StartButton type="submit" >
-            Start
-          </StartButton>
+        <StartButton type="submit" >
+          Start
+        </StartButton>
       </RecipeForm>
     </RecipeContainer>
   )
 };
 
 
-const RecipeContainer = styled.div`
+const RecipeContainer = styled(motion.div)`
   height: 100vh;
   width: 100%;
   display: flex;
@@ -54,7 +55,7 @@ const RecipeContainer = styled.div`
   align-items: center;
 `;
 
-const RecipeForm = styled.form`
+const RecipeForm = styled(motion.form)`
   height: 80vh;
   width: 20rem;
   display: flex;
@@ -65,7 +66,7 @@ const RecipeForm = styled.form`
   }
 `;
 
-const RecipeInput = styled.div`
+const RecipeInput = styled(motion.div)`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -98,14 +99,14 @@ const RecipeInput = styled.div`
   }
 `;
 
-const StartButton = styled.button`
-  border: none;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
+const StartButton = styled(motion.button)`
+  border-radius: 30px;
+  padding: 1rem 6rem;
   background: #ECEFF4;
-  cursor: pointer;
   color: #2E3440;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
   align-self: center;
 `;
 

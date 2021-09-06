@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import {Switch, Route} from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 // styles
 import GlobalStyles from "./components/GlobalStyles";
+import { motion } from "framer-motion";
 // Pages
 import TimerPage from "./pages/TimerPage";
 import RecipePage from "./pages/RecipePage";
@@ -15,25 +16,25 @@ function App() {
   const [inputSeconds, setInputSeconds] = useState(0);
   const [pause, setPause] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
-  
+
 
   return (
     <div className="App">
       <GlobalStyles />
-      <Burger menuOpen={menuOpen} setMenuOpen={setMenuOpen} /> 
-      <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} /> 
+      <Burger menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <Switch>
         <Route path="/" exact>
           <HomePage />
         </Route>
-    
+
         <Route path="/recipe" exact>
           <RecipePage inputSeconds={inputSeconds} setInputSeconds={setInputSeconds} />
         </Route>
-        
+
         <Route path="/timer">
           <TimerPage inputSeconds={inputSeconds} setInputSeconds={setInputSeconds} pause={pause} setPause={setPause} />
-        </Route> 
+        </Route>
       </Switch>
     </div>
   );

@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
 
 const Timer = ({ inputSeconds, setInputSeconds, pause, setPause }) => {
   let intervalRef = useRef();
@@ -54,7 +55,7 @@ const Timer = ({ inputSeconds, setInputSeconds, pause, setPause }) => {
   );
 };
 
-const Clock = styled.div`
+const Clock = styled(motion.div)`
   height: 50vh;
   width: 20rem;
   display: flex;
@@ -66,7 +67,7 @@ const Clock = styled.div`
   }
 `;
 
-const ClockContainer = styled.div`
+const ClockContainer = styled(motion.div)`
   height: 100vh;
   width: 100%;
   display: flex;
@@ -74,7 +75,7 @@ const ClockContainer = styled.div`
   align-items: center;
 `;
 
-const PauseButton = styled.button`
+const PauseButton = styled(motion.button)`
   border: none;
   width: 80px;
   height: 80px;
