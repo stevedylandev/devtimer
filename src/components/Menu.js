@@ -21,12 +21,14 @@ const Menu = ({menuOpen, setMenuOpen}) => {
   }
 
   return (
-    <MenuContainer initial="inactive" variants={dropDown} animate={menuOpen ? "active" : "inactive"}>
-      <MenuList>
-        <li onClick={routeChangeHome}>Home</li>
-        <li onClick={routeChangeRecipe}>Recipe</li>
-      </MenuList>
-    </MenuContainer>
+    <MenuOverflow>
+      <MenuContainer initial="inactive" variants={dropDown} animate={menuOpen ? "active" : "inactive"}>
+        <MenuList>
+          <li onClick={routeChangeHome}>Home</li>
+          <li onClick={routeChangeRecipe}>Recipe</li>
+        </MenuList>
+      </MenuContainer>
+    </MenuOverflow>
   )
 };
 
@@ -54,6 +56,11 @@ const MenuList = styled.ul`
     margin: 4rem 0rem;
     cursor: pointer;
   }
-`
+`;
+
+const MenuOverflow = styled.div`
+  overflow-x: hidden;
+  overflow-y: hidden;
+`;
 
 export default Menu;
