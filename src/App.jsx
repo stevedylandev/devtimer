@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Switch, Route } from "react-router-dom";
 // styles
 import GlobalStyles from "./components/GlobalStyles";
-import { motion } from "framer-motion";
 // Pages
 import TimerPage from "./pages/TimerPage";
 import RecipePage from "./pages/RecipePage";
