@@ -1,21 +1,21 @@
-import React from "react"; 
+import React from "react";
 import styled from "styled-components";
-import {motion} from "framer-motion";
-import {dropDown} from "../animations";
-import {useHistory} from "react-router-dom";
+import { motion } from "framer-motion";
+import { dropDown } from "../animations";
+import { useHistory } from "react-router-dom";
 
-const Menu = ({menuOpen, setMenuOpen}) => {
-  
+const Menu = ({ menuOpen, setMenuOpen }) => {
+
   const history = useHistory();
-  
-  const routeChangeHome = () =>{ 
-    let path = `/`; 
+
+  const routeChangeHome = () => {
+    let path = `/`;
     history.push(path);
     setMenuOpen(false);
   }
-  
-  const routeChangeRecipe = () =>{ 
-    let path = `/recipe`; 
+
+  const routeChangeRecipe = () => {
+    let path = `/recipe`;
     history.push(path);
     setMenuOpen(false);
   }
@@ -35,16 +35,16 @@ const Menu = ({menuOpen, setMenuOpen}) => {
 
 const MenuContainer = styled(motion.div)`
   height: 100vh;
-  width: 100vw;
+  width: 30vw;
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   z-index: 10;
-  background: #2E3440;
+  background: #E5E9F0;
 `;
 
 const MenuList = styled.ul`
@@ -55,6 +55,7 @@ const MenuList = styled.ul`
     font-weight: 600;
     margin: 4rem 0rem;
     cursor: pointer;
+    color: #2E3440;
   }
 `;
 

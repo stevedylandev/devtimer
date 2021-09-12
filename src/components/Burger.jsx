@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import {motion} from "framer-motion";
-import {line1Animation, line2Animation, line3Animation} from "../animations";
+import { motion } from "framer-motion";
+import { line1Animation, line2Animation, line3Animation } from "../animations";
 
 
-const Burger = ({menuOpen, setMenuOpen}) => {
+const Burger = ({ menuOpen, setMenuOpen }) => {
 
   const menuHandler = () => {
     setMenuOpen(!menuOpen);
@@ -12,17 +12,17 @@ const Burger = ({menuOpen, setMenuOpen}) => {
 
   return (
     <BurgerContainer onClick={menuHandler}>
-      <Line variants={line1Animation} animate={menuOpen ? "active" : "inactive"} />
-      <Line variants={line2Animation} animate={menuOpen ? "active" : "inactive"} />
-      <Line variants={line3Animation} animate={menuOpen ? "active" : "inactive"} />
+      <Line variants={line1Animation} style={menuOpen ? { backgroundColor: "#2E3440" } : { backgrounColor: "#ECEFF4" }} animate={menuOpen ? "active" : "inactive"} />
+      <Line variants={line2Animation} style={menuOpen ? { backgroundColor: "#2E3440" } : { backgrounColor: "#ECEFF4" }} animate={menuOpen ? "active" : "inactive"} />
+      <Line variants={line3Animation} style={menuOpen ? { backgroundColor: "#2E3440" } : { backgrounColor: "#ECEFF4" }} animate={menuOpen ? "active" : "inactive"} />
     </BurgerContainer>
   );
 };
 
 const BurgerContainer = styled(motion.div)`
   position: absolute;
-  top: 5%;
-  right: 5%;
+  top: 3%;
+  right: 3%;
   z-index: 20;
 `;
 
