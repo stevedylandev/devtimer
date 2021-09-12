@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 
-const Timer = ({ inputSeconds, setInputSeconds, pause, setPause }) => {
+const DeveloperTimer = ({ inputSeconds, setInputSeconds, pause, setPause }) => {
   let intervalRef = useRef();
 
   const tick = () => { setInputSeconds((prev) => prev - 1) };
@@ -85,4 +85,5 @@ const PauseButton = styled(motion.button)`
   color: #2E3440;
 `;
 
-export default Timer;
+export default DeveloperTimer;
+

@@ -1,10 +1,10 @@
 import React from "react";
-import Timer from "../components/Timer";
+import DeveloperTimer from "../components/DeveloperTimer";
 
 
 const TimerPage = ({ inputSeconds, setInputSeconds, pause, setPause }) => {
   return (
-    <Timer inputSeconds={inputSeconds} setInputSeconds={setInputSeconds} pause={pause} setPause={setPause} />
+    <DeveloperTimer inputSeconds={inputSeconds} setInputSeconds={setInputSeconds} pause={pause} setPause={setPause} />
   )
 }
 
