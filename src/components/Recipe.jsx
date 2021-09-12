@@ -33,11 +33,54 @@ const Recipe = ({ inputSeconds, setInputSeconds }) => {
     <RecipeContainer>
       <RecipeForm onSubmit={updateTimerValue}>
         <h1>Recipe</h1>
-        <RecipeInput>
-          <input id="mins" type="number" value={minValue} onChange={minInputHandler} min="0" max="59" placeholder="0" required />
-          <p>:</p>
-          <input id="secs" type="number" value={secsValue} onChange={secsInputHandler} min="0" max="59" placeholder="00" required />
-        </RecipeInput>
+        <RecipeInputContainer>
+          <h4>Developer</h4>
+          <RecipeInput>
+            <input id="mins" type="number" value={minValue} onChange={minInputHandler} min="0" max="59" placeholder="0" required />
+            <p>:</p>
+            <input id="secs" type="number" value={secsValue} onChange={secsInputHandler} min="0" max="59" placeholder="00" required />
+          </RecipeInput>
+        </RecipeInputContainer>
+        <RecipeInputContainer>
+          <h4>Stop Bath</h4>
+          <RecipeInput>
+            <input id="mins" type="number" value={minValue} onChange={minInputHandler} min="0" max="59" placeholder="0" required />
+            <p>:</p>
+            <input id="secs" type="number" value={secsValue} onChange={secsInputHandler} min="0" max="59" placeholder="00" required />
+          </RecipeInput>
+        </RecipeInputContainer>
+        <RecipeInputContainer>
+          <h4>Fixer</h4>
+          <RecipeInput>
+            <input id="mins" type="number" value={minValue} onChange={minInputHandler} min="0" max="59" placeholder="0" required />
+            <p>:</p>
+            <input id="secs" type="number" value={secsValue} onChange={secsInputHandler} min="0" max="59" placeholder="00" required />
+          </RecipeInput>
+        </RecipeInputContainer>
+        <RecipeInputContainer>
+          <h4>Rinse</h4>
+          <RecipeInput>
+            <input id="mins" type="number" value={minValue} onChange={minInputHandler} min="0" max="59" placeholder="0" required />
+            <p>:</p>
+            <input id="secs" type="number" value={secsValue} onChange={secsInputHandler} min="0" max="59" placeholder="00" required />
+          </RecipeInput>
+        </RecipeInputContainer>
+        <RecipeInputContainer>
+          <h4>Wetting Agent</h4>
+          <RecipeInput>
+            <input id="mins" type="number" value={minValue} onChange={minInputHandler} min="0" max="59" placeholder="0" required />
+            <p>:</p>
+            <input id="secs" type="number" value={secsValue} onChange={secsInputHandler} min="0" max="59" placeholder="00" required />
+          </RecipeInput>
+        </RecipeInputContainer>
+        <RecipeInputContainer>
+          <h4>Interval</h4>
+          <RecipeInput>
+            <input id="mins" type="number" value={minValue} onChange={minInputHandler} min="0" max="59" placeholder="0" required />
+            <p>:</p>
+            <input id="secs" type="number" value={secsValue} onChange={secsInputHandler} min="0" max="59" placeholder="00" required />
+          </RecipeInput>
+        </RecipeInputContainer>
         <StartButton type="submit" >
           Start
         </StartButton>
@@ -48,7 +91,7 @@ const Recipe = ({ inputSeconds, setInputSeconds }) => {
 
 
 const RecipeContainer = styled(motion.div)`
-  height: 100vh;
+  height: 150vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -56,7 +99,7 @@ const RecipeContainer = styled(motion.div)`
 `;
 
 const RecipeForm = styled(motion.form)`
-  height: 80vh;
+  height: 120vh;
   width: 20rem;
   display: flex;
   flex-direction: column;
@@ -71,7 +114,7 @@ const RecipeInput = styled(motion.div)`
   flex-direction: row;
   justify-content: center;
   padding: 1rem 1rem;
-  height: 5rem;
+  height: 4rem;
   border-radius: 30px;
   background: #ECEFF4;
   color: #2E3440;
@@ -99,6 +142,11 @@ const RecipeInput = styled(motion.div)`
   }
 `;
 
+const RecipeInputContainer = styled(motion.div)`
+  margin: 1rem 0rem; 
+  text-align: center;
+`;
+
 const StartButton = styled(motion.button)`
   border-radius: 30px;
   padding: 1rem 6rem;
@@ -108,6 +156,7 @@ const StartButton = styled(motion.button)`
   cursor: pointer;
   font-size: 16px;
   align-self: center;
+  margin: 1rem 0rem;
 `;
 
 export default Recipe;
