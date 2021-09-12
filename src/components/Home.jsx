@@ -17,7 +17,7 @@ const Home = () => {
     <Welcome>
       <h1>DevTimer</h1>
       <img src={timer} alt="timer" />
-      <StartButton onClick={routeChange}>Continue</StartButton>
+      <StartButton onClick={routeChange}>Get Started</StartButton>
     </Welcome>
   )
 };
