@@ -13,6 +13,12 @@ import Burger from "./components/Burger";
 function App() {
 
   const [inputSeconds, setInputSeconds] = useState(0);
+  const [devSeconds, setDevSeconds] = useState(0);
+  const [fixSeconds, setFixSeconds] = useState(0);
+  const [stopBathSeconds, setStopBathSeconds] = useState(0);
+  const [rinseSeconds, setRinseSeconds] = useState(0);
+  const [wettingAgentSeconds, setWettingAgentSeconds] = useState(0);
+  const [intervalSeconds, setIntervalSeconds] = useState(0);
   const [pause, setPause] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -28,11 +34,42 @@ function App() {
         </Route>
 
         <Route path="/recipe" exact>
-          <RecipePage inputSeconds={inputSeconds} setInputSeconds={setInputSeconds} />
+          <RecipePage
+            inputSeconds={inputSeconds}
+            setInputSeconds={setInputSeconds}
+            devSeconds={devSeconds}
+            setDevSeconds={setDevSeconds}
+            fixSeconds={fixSeconds}
+            setFixSeconds={setFixSeconds}
+            stopBathSeconds={stopBathSeconds}
+            setStopBathSeconds={setStopBathSeconds}
+            rinseSeconds={rinseSeconds}
+            setRinseSeconds={setRinseSeconds}
+            wettingAgentSeconds={wettingAgentSeconds}
+            setWettingAgentSeconds={setWettingAgentSeconds}
+            intervalSeconds={intervalSeconds}
+            setIntervalSeconds={setIntervalSeconds}
+          />
         </Route>
 
         <Route path="/timer">
-          <TimerPage inputSeconds={inputSeconds} setInputSeconds={setInputSeconds} pause={pause} setPause={setPause} />
+          <TimerPage
+            inputSeconds={inputSeconds}
+            setInputSeconds={setInputSeconds}
+            devSeconds={devSeconds}
+            setDevSeconds={setDevSeconds}
+            fixSeconds={fixSeconds}
+            setFixSeconds={setFixSeconds}
+            stopBathSeconds={stopBathSeconds}
+            setStopBathSeconds={setStopBathSeconds}
+            rinseSeconds={rinseSeconds}
+            setRinseSeconds={setRinseSeconds}
+            wettingAgentSeconds={wettingAgentSeconds}
+            setWettingAgentSeconds={setWettingAgentSeconds}
+            intervalSeconds={intervalSeconds}
+            setIntervalSeconds={setIntervalSeconds}
+            pause={pause}
+            setPause={setPause} />
         </Route>
       </Switch>
     </div>
